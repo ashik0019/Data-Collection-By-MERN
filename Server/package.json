@@ -1,0 +1,22 @@
+{
+  "name": "data-collection-api",
+  "version": "1.0.0",
+  "description": "This is an simple app for data collections",
+  "main": "src/server.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "Data",
+    "collection",
+    "mern"
+  ],
+  "author": "Ashiqur Rahman",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "joi": "^17.7.0",
+    "mongodb": "^4.13.0"
+  }
+}
