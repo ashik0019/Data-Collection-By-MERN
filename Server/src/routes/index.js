@@ -1,5 +1,5 @@
 
-import userRoutesConfigure from './userRoutes';
+import userRoutesConfigure from './userRoutes.js';
 
 const configureAllRoutes = (app) => {
   userRoutesConfigure(app);

@@ -4,8 +4,8 @@ import bodyParser from "body-parser";
 import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
-import configureAllRoutes from './routes/index';
-import { handleError } from './middlewares/index';
+import configureAllRoutes from './routes/index.js';
+import { handleError } from './middlewares/index.js';
 // config environment variable
 dotenv.config({ path: './config/config.env' });
 const app = express();
