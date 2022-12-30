@@ -42,3 +42,4 @@ export const deleteCat = asyncHandler(async (req, res) => {
   const deletedCat = await deleteCatService(req.params.id);
   return res.status(200).json({ deletedCat, msg: `${deletedCat.name} delete successfully` });
 });
+
