@@ -24,7 +24,7 @@ export const updateCatService = async (id, data) => {
 };
 
 export const deleteCatService = async (id) => {
-  const deletedCat = await Categories.findByIdAndUpdate(id, { new: true });
+  const deletedCat = await Categories.findOneAndRemove({'_id' : id});
   return deletedCat;
 };
 

@@ -21,7 +21,7 @@ export const getCat = asyncHandler(async (req, res) => {
 
 export const getAllCats = asyncHandler(async (req, res) => {
   const cats = await getAllCatService();
-  return res.status(200).json({ cats, msg: `All users data fetch successfully` });
+  return res.status(200).json({ cats, msg: `All categories data fetch successfully` });
 });
 
 export const updateCat = asyncHandler(async (req, res) => {
