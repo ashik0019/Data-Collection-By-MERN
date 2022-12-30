@@ -1,9 +1,9 @@
 import userValidation from './userValidation.js';
-//import bookValidation from './bookValidation';
+import categoryValidation from './categoryValidation.js';
 
 const validators = {
   userValidation,
-  ///bookValidation,
+  categoryValidation,
 };
 
 export default validators;
