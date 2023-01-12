@@ -7,6 +7,9 @@ import {
   deleteUserService,
   checkTempUserService,
   getAllUserService,
+  findUserByEmail,
+  findUserById,
+  createUserServices
 } from '../services/userService.js';
 import { NotFound } from '../utils/error.js';
 
