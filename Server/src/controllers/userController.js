@@ -35,6 +35,25 @@ export const signUpUser = asyncHandler(async (req, res) => {
 });
 
 
+// login user
+export const signInUser = asyncHandler(async (req, res) => {
+  const { email, password } = req.body;
+  const user = await findUserByEmail(email);
+  if (!user) {
+    throw new NotFound('Invalid credentials');
+  }
+  const isMatch = await bcrypt.compare(password, user.password);
+  if (!isMatch) {
+    throw new BadRequest('Invalid credentials');
+  }
+  if (!user.isActivate) {
+    throw new BadRequest('Your Account Is Deactive Now');
+  }
+  sendTokenResponse(user, 200, res);
+});
+
+
+
 
 
 export const addUser = asyncHandler(async (req, res) => {
