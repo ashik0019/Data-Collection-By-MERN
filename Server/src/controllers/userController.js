@@ -1,5 +1,7 @@
 import bcrypt from 'bcryptjs';
 import asyncHandler from '../utils/async.js';
+import { NotFound, BadRequest } from '../utils/error.js';
+import sendTokenResponse from '../utils/sendTokenResponse.js';
 import {
   addUserService,
   getUserService,
@@ -11,7 +13,29 @@ import {
   findUserById,
   createUserServices
 } from '../services/userService.js';
-import { NotFound } from '../utils/error.js';
+
+
+
+
+// register  user
+export const signUpUser = asyncHandler(async (req, res) => {
+  const { email,role,password } = req.body;
+  const user = await findUserByEmail(email);
+  if (user) {
+    throw new BadRequest('Email already Exits');
+  }
+  if(role == 'Super Admin'){
+    throw new BadRequest('Super admin already Exits');
+  }
+  const hasPassword = await bcrypt.hash(password, 11);
+  const dataWithHash = { ...req.body, password: hasPassword };
+  console.log(dataWithHash)
+  const registeredUser = await createUserServices(dataWithHash);
+  res.status(200).json({ success: true, details: registeredUser, msg: 'User Register Success' });
+});
+
+
+
 
 export const addUser = asyncHandler(async (req, res) => {
   const newUser = await addUserService(req.body);
