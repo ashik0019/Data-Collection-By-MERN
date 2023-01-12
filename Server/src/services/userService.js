@@ -32,3 +32,20 @@ export const checkTempUserService = async (id) => {
   const checkTemp = await User.findById(id);
   return checkTemp;
 };
+
+export const findUserById = async (id) => {
+  const user = User.findById(id).select('-password -resetPasswordExpires -resetPasswordToken ');
+  return user;
+};
+
+
+export const findUserByEmail = async (email) => {
+  const result = await User.findOne({ email });
+  console.log(result)
+  return result;
+};
+
+export const createUserServices = async (user) => {
+  const result = await User.create(user);
+  return result;
+};

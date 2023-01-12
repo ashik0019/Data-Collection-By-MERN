@@ -1,3 +1,4 @@
+import bcrypt from 'bcryptjs';
 import asyncHandler from '../utils/async.js';
 import {
   addUserService,
