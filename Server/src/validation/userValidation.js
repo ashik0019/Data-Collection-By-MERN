@@ -3,7 +3,7 @@ import Joi from 'joi';
 const schema = Joi.object().keys(
   {
     name: Joi.string().required().min(3),
-    number: Joi.string().trim().regex(/^\+8801[13-9]\d{8}$/)
+    mobile: Joi.string().trim().regex(/^\+8801[13-9]\d{8}$/)
       .max(14)
       .required(),
     role: Joi.string().required().valid('admin', 'staff'),

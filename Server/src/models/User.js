@@ -4,9 +4,30 @@ const userSchema = mongoose.Schema({
   name: {
     type: String,
   },
-  number: {
+  mobile: {
     type: String,
     unique: true,
+  },
+  password: {
+    type: String,
+  },
+  resetPasswordToken: {
+    type: String,
+  },
+  resetPasswordExpires: {
+    type: Date,
+  },
+  isActivate: {
+    type: Boolean,
+    default: false,
+  },
+  isLoadOut: {
+    type: Boolean,
+    default: false,
+  },
+  isDeleted: {
+    type: Boolean,
+    default: false,
   },
   role: {
     type: String,
