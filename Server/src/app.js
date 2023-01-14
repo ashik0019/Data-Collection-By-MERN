@@ -7,7 +7,7 @@ import cors from "cors";
 import configureAllRoutes from './routes/index.js';
 import { handleError } from './middlewares/index.js';
 // config environment variable
-dotenv.config({ path: './config/config.env' });
+dotenv.config({ path: './.env' });
 const app = express();
 app.use(express.json());
 app.use(helmet());

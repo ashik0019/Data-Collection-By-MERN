@@ -22,7 +22,7 @@ router.route('/:number').get(accessControl, getUser);
 router.route('/:id').put(updateUser).delete(deleteUser);
 
 
-router.route('/register').post(permit('Super Admin','Admin'), handleValidations(validators.userRegisterValidator), signUpUser);
+router.route('/register').post(    handleValidations(validators.userRegisterValidator), signUpUser);
 router.route('/login').post(handleValidations(validators.loginValidation), signInUser);
 
 const configure = (app) => {
